@@ -11,15 +11,6 @@ This document describes how to use the Remora analysis pipeline for detecting mo
 
 ## Setup
 
-### Environment Setup
-The script automatically sets up a conda environment with the required dependencies:
-```bash
-conda create -y -n remora_env python=3.11
-conda install -y -c conda-forge libffi
-pip install torch
-pip install --no-cache-dir ont-remora
-```
-
 ### Resource Requirements
 - GPU: 1 GPU node
 - Memory: 32GB
