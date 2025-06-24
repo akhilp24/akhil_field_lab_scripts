@@ -40,7 +40,7 @@ def run_command(command):
     
     return return_code
 
-def filter_bam(input_bam, output_bam, min_mapq=0, remove_unmapped=False, remove_map0=False, min_length=None):
+def filter_bam(input_bam, output_bam, min_mapq=0, remove_unmapped=False, remove_map0=False, min_length=None, remove_indels=False):
     """
     Filter BAM file based on mapping quality, mapping status, and read length.
     
@@ -51,6 +51,7 @@ def filter_bam(input_bam, output_bam, min_mapq=0, remove_unmapped=False, remove_
         remove_unmapped (bool): Whether to remove unmapped reads (default: False)
         remove_map0 (bool): Whether to remove reads with mapping quality 0 (default: False)
         min_length (int or None): Minimum read length to keep (default: None)
+        remove_indels (bool): Whether to remove reads with insertions or deletions (default: False)
     """
     # Validate input file exists
     if not os.path.exists(input_bam):
@@ -61,7 +62,19 @@ def filter_bam(input_bam, output_bam, min_mapq=0, remove_unmapped=False, remove_
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    # Build samtools view command
+    # If removing indels, use the special awk-based command
+    if remove_indels:
+        cmd = f"samtools view -h {input_bam} | awk 'BEGIN{{OFS=\"\\t\"}} /^@/ {{print $0}} !/^@/ && $6 !~ /[ID]/ {{print $0}}' | samtools view -b -o {output_bam}"
+        return_code = run_command(cmd)
+        
+        if return_code == 0:
+            print(f"Successfully filtered BAM file (removed indels). Output written to: {output_bam}")
+            return True
+        else:
+            print(f"Failed to filter BAM file. Return code: {return_code}")
+            return False
+    
+    # Build samtools view command for other filters
     cmd = ["samtools view -b"]
     
     # Add mapping quality filter
@@ -105,6 +118,7 @@ def main():
     parser.add_argument("--remove-unmapped", action="store_true", help="Remove unmapped reads")
     parser.add_argument("--remove-map0", action="store_true", help="Remove reads with mapping quality 0")
     parser.add_argument("--min-length", type=int, default=None, help="Minimum read length to keep (optional)")
+    parser.add_argument("--remove-indels", action="store_true", help="Remove reads with insertions or deletions")
     
     args = parser.parse_args()
     
@@ -115,7 +129,8 @@ def main():
         min_mapq=args.min_mapq,
         remove_unmapped=args.remove_unmapped,
         remove_map0=args.remove_map0,
-        min_length=args.min_length
+        min_length=args.min_length,
+        remove_indels=args.remove_indels
     )
     
     if not success:
