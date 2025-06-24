@@ -67,7 +67,7 @@ samtools --version
 
 # samtools merge minion_8_barcode14_merged_long.bam /project/romano_shared/telomeres/akhil/sorted/1c5b00b8-2f59-4ee2-93fb-5a5ac6642eef_SQK-NBD114-24_barcode14_sorted.bam /project/romano_shared/telomeres/akhil/sorted/3664b9f0-93af-4b9e-95dd-3dc78e7f38db_SQK-NBD114-24_barcode14_sorted.bam /project/romano_shared/telomeres/akhil/sorted/f4de4fc2-4039-4481-88c0-1f94400bd5e3_SQK-NBD114-24_barcode14_sorted.bam
 
-python akhil/samtools_filtering.py --input input.bam --output output_filtered.bam --min-length 100
+python samtools_filtering.py --input input.bam --output output_filtered.bam --min-length 100
 
 # Example: Remove reads with insertions and deletions
 python samtools_filtering.py --input input.bam --output output_noindels.bam --remove-indels
