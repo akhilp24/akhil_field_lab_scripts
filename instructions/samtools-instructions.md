@@ -42,7 +42,19 @@ python samtools_filtering.py \
     --min-mapq 20
 ```
 
-#### 2. Remove Unmapped Reads
+#### 2. Filter by Minimum Read Length
+You can filter reads by their length using the `--min-length` option. Only reads with a length greater than or equal to the specified value will be retained.
+
+```bash
+python samtools_filtering.py \
+    --input input.bam \
+    --output output.bam \
+    --min-length 100
+```
+
+- `--min-length`: Minimum read length to retain (integer)
+
+#### 3. Remove Unmapped Reads
 ```bash
 python samtools_filtering.py \
     --input input.bam \
@@ -50,7 +62,7 @@ python samtools_filtering.py \
     --remove-unmapped
 ```
 
-#### 3. Remove Reads with Mapping Quality 0
+#### 4. Remove Reads with Mapping Quality 0
 ```bash
 python samtools_filtering.py \
     --input input.bam \
@@ -58,12 +70,13 @@ python samtools_filtering.py \
     --remove-map0
 ```
 
-#### 4. Combined Filters
+#### 5. Combined Filters
 ```bash
 python samtools_filtering.py \
     --input input.bam \
     --output output.bam \
     --min-mapq 10 \
+    --min-length 100 \
     --remove-unmapped \
     --remove-map0
 ```
@@ -80,11 +93,18 @@ python samtools_filtering.py \
     --output output1_mapq20.bam \
     --min-mapq 20
 
-# Filter with minimum mapq=60
+# Filter with minimum read length=100
 python samtools_filtering.py \
     --input input1.bam \
-    --output output1_mapq60.bam \
-    --min-mapq 60
+    --output output1_minlen100.bam \
+    --min-length 100
+
+# Filter with minimum mapq=60 and minimum read length=150
+python samtools_filtering.py \
+    --input input1.bam \
+    --output output1_mapq60_minlen150.bam \
+    --min-mapq 60 \
+    --min-length 150
 
 # Process another BAM file
 python samtools_filtering.py \
