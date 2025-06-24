@@ -6,3 +6,4 @@ data/
 .env.test.local
 .env.production.local
 output_logs/
+plot.log
