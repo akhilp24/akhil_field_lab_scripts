@@ -70,3 +70,10 @@ python samtools_filtering.py \
 # python samtools_filtering.py --input /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode11_merged_short.bam --output minion_8_barcode11_merged_short_size_filtered.bam --min-length 100
 
 # python samtools_filtering.py --input /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam --output minion_8_barcode14_merged_short_size_filtered.bam --min-length 100
+python samtools_filtering.py --input input.bam --output output_filtered.bam --min-length 100
+
+# Example: Remove reads with insertions and deletions
+python samtools_filtering.py --input input.bam --output output_noindels.bam --remove-indels
+
+# Example: Combine multiple filters including indel removal
+# python samtools_filtering.py --input input.bam --output output_filtered.bam --min-mapq 20 --remove-unmapped --remove-indels --min-length 100
