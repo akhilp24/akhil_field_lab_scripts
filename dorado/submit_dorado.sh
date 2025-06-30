@@ -18,17 +18,39 @@ module load cuda/12.4
 module load gcc/12.2.0
 module load samtools
 
-python dorado_run.py \
-    --pod5 /project/romano_shared/telomeres/data/Minion10/combined_pod5 \
-    --output Minion_10_qs9_${LSB_JOBID}.fastq \
-    --accuracy sup \
-    --device cuda:all \
-    --qscore 9 \
-    --no-trim \
-    --kit-name SQK-NBD114-96 \
-    --emit-moves
+# python dorado_run.py \
+#     --pod5 /project/romano_shared/telomeres/data/Minion10/combined_pod5 \
+#     --output Minion_10_qs9_${LSB_JOBID}.fastq \
+#     --accuracy sup \
+#     --device cuda:all \
+#     --qscore 9 \
+#     --no-trim \
+#     --kit-name SQK-NBD114-96 \
+#     --emit-moves
 
    
 # --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort.fasta \
 # --reference /project/romano_shared/telomeres/akhil/reference_files/reference.fasta \
 # --emit-moves
+
+python dorado_run.py \
+    --pod5 /project/romano_shared/telomeres/data/Flongle_68/pod5 \
+    --output Flongle_68_q10_referenceshort3_${LSB_JOBID}.bam \
+    --accuracy sup \
+    --device cuda:all \
+    --qscore 9 \
+    --no-trim \
+    --kit-name SQK-NBD114-24 \
+    --emit-moves \
+    --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort3.fasta
+
+python dorado_run.py \
+    --pod5 /project/romano_shared/telomeres/data/Flongle_68/pod5 \
+    --output Flongle_68_q10_referenceshort4_${LSB_JOBID}.bam \
+    --accuracy sup \
+    --device cuda:all \
+    --qscore 9 \
+    --no-trim \
+    --kit-name SQK-NBD114-24 \
+    --emit-moves \
+    --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort4.fasta
