@@ -8,3 +8,11 @@ data/
 output_logs/
 plot.log
 can_all_chunks/
+remora/can_all_chunks/
+remora/8oxoG29_chunks/
+remora/8oxoG30_chunks/
+remora/8oxoG31_chunks/
+remora/8oxoG35_chunks/
+remora/train_dataset.jsn
+remora/train_dataset.log
+remora/train_results/
