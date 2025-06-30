@@ -7,3 +7,4 @@ data/
 .env.production.local
 output_logs/
 plot.log
+can_all_chunks/

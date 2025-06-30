@@ -41,14 +41,14 @@ remora -v
 
 # To train a model
 
-# python remora_run.py \
-#     --pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
-#     --can-bam /project/romano_shared/telomeres/data/Minion_8/minion_8_q9_mapq_60demuxed_calls/SQK-NBD114-24_barcode14.bam \
-#     --motif TTAGGG \
-#     --mod-num 3 \
-#     --mod-bam /project/romano_shared/telomeres/data/Minion_8/minion_8_q9_mapq_60demuxed_calls/SQK-NBD114-24_barcode11.bam \
-#     --g-type G29 \
-#     --train
+python remora_run.py \
+    --pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
+    --can-bam /project/romano_shared/telomeres/data/Minion_8/minion_8_q9_mapq_60demuxed_calls/SQK-NBD114-24_barcode14.bam \
+    --motif TTAGGG \
+    --mod-num 3 \
+    --mod-bam /project/romano_shared/telomeres/data/Minion_8/minion_8_q9_mapq_60demuxed_calls/SQK-NBD114-24_barcode11.bam \
+    --g-type G29 \
+    --train
 
 # To do inference
 
@@ -78,18 +78,18 @@ remora -v
 
 # To generate a plot
 
-python remora_run.py \
-    --pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
-    --can-pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
-    --mod-pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
-    --can-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode14.bam \
-    --mod-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode13.bam \
-    --motif TTAGGG \
-    --mod-num 5 \
-    --g-type G31 \
-    --can-sort-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode14.sorted.bam \
-    --mod-sort-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode13.sorted.bam \
-    --plot
+# python remora_run.py \
+#     --pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
+#     --can-pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
+#     --mod-pod5 /project/romano_shared/telomeres/data/Minion_8/pod5 \
+#     --can-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode14.bam \
+#     --mod-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode13.bam \
+#     --motif TTAGGG \
+#     --mod-num 5 \
+#     --g-type G31 \
+#     --can-sort-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode14.sorted.bam \
+#     --mod-sort-bam /project/romano_shared/telomeres/data/testing/plotting/minion8_q9/mapq60/g31/SQK-NBD114-24_barcode13.sorted.bam \
+#     --plot
 
 # Optional flags you can add:
 # --train              # If you want to train a model

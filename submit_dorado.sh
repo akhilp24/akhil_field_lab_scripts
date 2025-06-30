@@ -6,7 +6,7 @@
 #BSUB -m romanogpu1           # Request specific GPU node
 #BSUB -W 24:00                # Wall clock time limit
 #BSUB -M 32GB                 # Memory limit
-#BSUB -n 40                    # Number of cores
+#BSUB -n 48                    # Number of cores
 #BSUB -gpu "num=1"
 #BSUB -B                      # Email when job starts
 #BSUB -N                      # Email when job ends

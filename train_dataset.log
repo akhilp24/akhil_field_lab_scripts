@@ -1,0 +1,1 @@
+DEBUG [16:03:47.648:MainProcess:MainThread:log.py:68] Command: """/appl/python-3.12/bin/remora dataset make_config train_dataset.jsn can_all_chunks 8oxoG29_chunks --dataset-weights 1 1 --log-filename train_dataset.log"""

@@ -17,10 +17,10 @@ echo "Samtools version:"
 module load samtools
 samtools --version
 
-# python samtools_filtering.py \
-#     --input /project/romano_shared/telomeres/akhil/Minion_8_qs9_38423387_long_reference.bam \
-#     --output Minion_8_qs9_38423387_long_reference_mapq60_filtered.bam \
-#     --min-mapq 60
+python samtools_filtering.py \
+    --input /project/romano_shared/telomeres/data/Flongle_68_q11short_shortq11.bam_demuxed/flongle68_q11_barcode16.bam \
+    --output flongle68_q11_barcode16_mapq22_filtered.bam \
+    --min-mapq 22
 
 # python samtools_filtering.py \
 #     --input /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_qs9_38217398.bam_demuxed/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode13.bam \
@@ -67,4 +67,6 @@ samtools --version
 
 # samtools merge minion_8_barcode14_merged_long.bam /project/romano_shared/telomeres/akhil/sorted/1c5b00b8-2f59-4ee2-93fb-5a5ac6642eef_SQK-NBD114-24_barcode14_sorted.bam /project/romano_shared/telomeres/akhil/sorted/3664b9f0-93af-4b9e-95dd-3dc78e7f38db_SQK-NBD114-24_barcode14_sorted.bam /project/romano_shared/telomeres/akhil/sorted/f4de4fc2-4039-4481-88c0-1f94400bd5e3_SQK-NBD114-24_barcode14_sorted.bam
 
-python akhil/samtools_filtering.py --input input.bam --output output_filtered.bam --min-length 100
+# python samtools_filtering.py --input /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode11_merged_short.bam --output minion_8_barcode11_merged_short_size_filtered.bam --min-length 100
+
+# python samtools_filtering.py --input /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam --output minion_8_barcode14_merged_short_size_filtered.bam --min-length 100
