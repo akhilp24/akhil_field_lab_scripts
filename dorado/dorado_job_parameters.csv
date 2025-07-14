@@ -24,3 +24,4 @@ Job ID,Timestamp,Pod5,Output,Accuracy,Device,Q-score,Reference,Moves,Remove Map0
 38943484,20250630_142312,/project/romano_shared/telomeres/data/Flongle_68/pod5,Flongle_68_q10_referenceshort_short_38943484.bam,sup,cuda:all,9,/project/romano_shared/telomeres/akhil_fieldlab/reference_files/referenceshort_short.fasta,moves_enabled,,
 38943489,20250630_143245,/project/romano_shared/telomeres/data/Flongle_68/pod5,Flongle_68_q10_referenceshort3_38943489.bam,sup,cuda:all,9,/project/romano_shared/telomeres/akhil_fieldlab/reference_files/referenceshort_short3.fasta,moves_enabled,,
 38943489,20250630_144232,/project/romano_shared/telomeres/data/Flongle_68/pod5,Flongle_68_q10_referenceshort4_38943489.bam,sup,cuda:all,9,/project/romano_shared/telomeres/akhil_fieldlab/reference_files/referenceshort_short4.fasta,moves_enabled,,
+39277248,20250714_155041,/project/romano_shared/telomeres/data/Flongle_67/pod5,Flongle67_qs9_39277248.fastq,sup,cuda:all,9,no_reference,,,
