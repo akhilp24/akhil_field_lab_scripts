@@ -80,6 +80,7 @@ def main():
     parser.add_argument("--remove-map0", action="store_true", help="Remove mapped reads with score of 0")
     parser.add_argument("--remove-unmapped", action="store_true", help="Remove unmapped reads")
     parser.add_argument("--kit-name", type=str, default="SQK-NBD114-24", help="Kit name")
+    parser.add_argument("--basecaller-options", type=str, default="", help="Additional options to pass to dorado basecaller")
     
     args = parser.parse_args()
     
@@ -94,7 +95,7 @@ def main():
     if args.no_trim:
         basecaller_command += "--no-trim "
     
-    basecaller_command += f"--min-qscore {args.qscore} --device {args.device} /project/romano_shared/telomeres/models/dna_r10.4.1_e8.2_400bps_{args.accuracy}@v5.0.0 {args.pod5} "
+    basecaller_command += f"--min-qscore {args.qscore} --device {args.device} /project/romano_shared/telomeres/models/dna_r10.4.1_e8.2_400bps_{args.accuracy}@v5.0.0 {args.pod5} {args.basecaller_options}"
     
     if args.output.endswith("fastq"):
         basecaller_command += "--emit-fastq "

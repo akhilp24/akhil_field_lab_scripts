@@ -40,9 +40,8 @@ python dorado_run.py \
     --device cuda:all \
     --qscore 9 \
     --no-trim \
-    --kit-name SQK-NBD114-24 \
     --emit-moves \
-    --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort3.fasta
+    --reference /project/romano_shared/telomeres/akhil_fieldlab/reference_files/referenceshort_short3.fasta
 
 python dorado_run.py \
     --pod5 /project/romano_shared/telomeres/data/Flongle_68/pod5 \
@@ -51,6 +50,5 @@ python dorado_run.py \
     --device cuda:all \
     --qscore 9 \
     --no-trim \
-    --kit-name SQK-NBD114-24 \
     --emit-moves \
-    --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort4.fasta
+    --reference /project/romano_shared/telomeres/akhil_fieldlab/reference_files/referenceshort_short4.fasta

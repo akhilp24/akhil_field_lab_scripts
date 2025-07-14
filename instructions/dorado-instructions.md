@@ -28,7 +28,7 @@ python dorado_run.py \
     --output testing_python_job_G_filtered_apr11_2025.bam \
     --accuracy sup \
     --device cuda:all \
-    --qscore 9 \'
+    --qscore 9 \
     --no-trim
     --reference /project/romano_shared/telomeres/akhil/reference_files/referenceshort.fasta
 ```

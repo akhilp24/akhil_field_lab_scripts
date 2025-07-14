@@ -19,45 +19,68 @@ module load samtools
 # module load anaconda/3
 module load python/3.11
 
-remora dataset prepare \
-  /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
-  /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam \
-  --output-path can_all_chunks \
-  --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
-  --refine-rough-rescale \
-  --motif TTAGGG 3 \
-  --mod-base-control \
-  --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionscan.bed
+# Dataset preparation
 
-remora dataset prepare \
-  /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
-  /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode11_merged_short.bam \
-  --output-path 8oxo_G29_chunks \
-  --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
-  --refine-rough-rescale \
-  --motif TTAGGG 3 \
-  --mod-base o 8oxo \
-  --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG29.bed
 
-remora dataset prepare \
-  /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
-  /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode12_merged_short.bam \
-  --output-path 8oxo_G30_chunks \
-  --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
-  --refine-rough-rescale \
-  --motif TTAGGG 4 \
-  --mod-base o 8oxo \
-  --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG30.bed
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam \
+#   --output-path can_G29_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 3 \
+#   --mod-base-control \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionscan.bed
 
-remora dataset prepare \
-  /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
-  /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode13_merged_short.bam \
-  --output-path 8oxo_G31_chunks \
-  --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
-  --refine-rough-rescale \
-  --motif TTAGGG 5 \
-  --mod-base o 8oxo \
-  --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG31.bed
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam \
+#   --output-path can_G30_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 4 \
+#   --mod-base-control \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionscan.bed
+
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode14_merged_short.bam \
+#   --output-path can_G31_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 5 \
+#   --mod-base-control \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionscan.bed
+
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode11_merged_short.bam \
+#   --output-path 8oxo_G29_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 3 \
+#   --mod-base o 8oxo \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG29.bed
+
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode12_merged_short.bam \
+#   --output-path 8oxo_G30_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 4 \
+#   --mod-base o 8oxo \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG30.bed
+
+# remora dataset prepare \
+#   /project/romano_shared/telomeres/data/Minion_8/total_pod5 \
+#   /project/romano_shared/telomeres/akhil_fieldlab/data/minion_8_barcode13_merged_short.bam \
+#   --output-path 8oxo_G31_chunks \
+#   --refine-kmer-level-table /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/levels.txt \
+#   --refine-rough-rescale \
+#   --motif TTAGGG 5 \
+#   --mod-base o 8oxo \
+#   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG31.bed
 
 # remora dataset prepare \
 #   /mnt/f/Remora_archives/Minion_8/Flongle_68/pod5/ \
@@ -69,18 +92,68 @@ remora dataset prepare \
 #   --mod-base o 8oxo \
 #   --focus-reference-positions /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/focus_reference_positionsG35.bed
 
+# Dataset configuration
+# remora \
+#   dataset make_config \
+#   train_dataset.jsn \
+#   can_G29_chunks \
+#   can_G30_chunks \
+#   can_G31_chunks \
+#   8oxo_G29_chunks \
+#   8oxo_G30_chunks \
+#   8oxo_G31_chunks \
+#   --dataset-weights 16 16 16 1 1 1 \
+#   --log-filename train_dataset.log
+
+# # Dataset training
+# remora model train train_dataset.jsn --model /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/ConvLSTM_w_ref.py --device cuda:0 --chunk-context 25 25 --output-path train_results
+
+
+
+
+# Inference
 
 remora \
-  dataset make_config \
-  train_dataset.jsn \
-  can_G29_chunks \
-  can_G30_chunks \
-  can_G31_chunks \
-  8oxo_G29_chunks \
-  8oxo_G30_chunks \
-  8oxo_G31_chunks \
-  --dataset-weights 16 16 16 1 1 1 \
-  --log-filename train_dataset.log
+  infer from_pod5_and_bam --reference-anchored \
+  /project/romano_shared/telomeres/data/Flongle_67/pod5 \
+  /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_demuxed_calls/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode14_mapq20_filtered.bam \
+  --model train_results/model_best.pt \
+  --out-bam wt_infer.bam \
+  --log-filename wt_infer.log \
+  --device cuda:0
 
+remora \
+  infer from_pod5_and_bam --reference-anchored \
+  /project/romano_shared/telomeres/data/Flongle_67/pod5 \
+  /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_demuxed_calls/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode21_mapq20_filtered.bam \
+  --model train_results/model_best.pt \
+  --out-bam G29_infer.bam \
+  --log-filename G29_infer.log \
+  --device cuda:0
 
-remora model train train_dataset.jsn --model /project/romano_shared/telomeres/akhil_fieldlab/stationaryfiles/ConvLSTM_w_ref.py --device 0 --chunk-context 25 25 --output-path train_results
+remora \
+  infer from_pod5_and_bam --reference-anchored \
+  /project/romano_shared/telomeres/data/Flongle_67/pod5 \
+  /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_demuxed_calls/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode13_mapq20_filtered.bam \
+  --model train_results/model_best.pt \
+  --out-bam G31_infer.bam \
+  --log-filename G31_infer.log \
+  --device cuda:0
+
+remora \
+  infer from_pod5_and_bam --reference-anchored \
+  /project/romano_shared/telomeres/data/Flongle_67/pod5 \
+  /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_demuxed_calls/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode12_mapq20_filtered.bam \
+  --model train_results/model_best.pt \
+  --out-bam G30_infer.bam \
+  --log-filename G30_infer.log \
+  --device cuda:0
+
+# remora \
+#   infer from_pod5_and_bam --reference-anchored \
+#   /project/romano_shared/telomeres/data/Flongle_67/pod5 \
+#   /project/romano_shared/telomeres/data/Flongle_67/Flongle_67_demuxed_calls/32a33d53-7d3a-4b39-9aef-857f4775cfac_SQK-NBD114-24_barcode15_mapq20_filtered.bam \
+#   --model train_results/model_best.pt \
+#   --out-bam G35_infer.bam \
+#   --log-filename G35_infer.log \
+#   --device cuda:0
